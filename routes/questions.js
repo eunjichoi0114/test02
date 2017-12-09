@@ -20,6 +20,7 @@ router.get('/', catchErrors(async (req, res, next) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
 
+  
   var query = {};
   const term = req.query.term;
   if (term) {
