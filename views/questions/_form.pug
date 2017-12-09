@@ -1,0 +1,55 @@
+.form-group
+  label(for="title") Title
+  input.form-control(type="text", name="title", placeholder="이벤트 이름", value=question.title)
+.form-group
+  label(for="title") Place
+  input.form-control(type="text", name="place", placeholder="이벤트 장소", value=question.place)
+.form-group
+  label(for="title") StartTime
+  input.form-control(type="text", name="startTime", placeholder="이벤트 시작 시간", value=question.startTime)
+.form-group
+  label(for="title") FinishTime
+  input.form-control(type="text", name="finishTime", placeholder="이벤트 종료 시간", value=question.finishTime)
+.form-group
+  label(for="title") Explain
+  input.form-control(type="text", name="explain", placeholder="이벤트 상세 설명", value=question.explain)
+.form-group
+  label(for="question") GroupName
+  input.form-control(type="text", name="groupName", placeholder="등록 조직 이름", value=question.groupName)
+.form-group
+  label(for="question") GroupExplain
+  input.form-control(type="text", name="groupExplain", placeholder="등록 조직 설명", value=question.groupExplain)
+
+
+label(for='eventstyle') EventStyle
+      - const eventstyleoptions = [{value: 'style1'}, {value: 'style2'}, {value: 'style3'}]
+      select#eventstyle(name='eventstyle' size='3' multiple required)
+        each eventstyle in eventstyleoptions
+          option(value=(eventstyle.value)) #{eventstyle.value}
+
+label(for='eventPay') EventPay
+      - const eventPayOptions = [{value : 'free'}, {value : 'charge'}]
+      select#evevtPay(name='eventPay' size='2' multi required)
+        each eventPay in eventPayOptions
+          option(value=(eventPay.value)) #{eventPay.value}
+
+.form-group
+  label(for="tags") TicketPrice
+  input.form-control(type="text", name="ticketPrice", placeholder="티켓 가격(유료인 경우)", value=question.ticetPrice)
+
+.form-group
+  label(for="tags") MaximumNumer
+  input.form-control(type="text", name="maximumNumber", placeholder="최대 참가 인원", value=question.maximumNumber)
+
+
+
+
+
+
+
+.form-group
+  label(for="question") Question
+  textarea.form-control(name="content", rows="5")= question.content
+.form-group
+  label(for="tags") Tags
+  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
